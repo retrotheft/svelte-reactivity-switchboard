@@ -1,0 +1,293 @@
+:root {
+   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+   line-height: 1.5;
+   font-weight: 400;
+
+   color-scheme: light dark;
+   color: rgba(255, 255, 255, 0.87);
+
+   font-synthesis: none;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+a {
+   font-weight: 500;
+   color: #646cff;
+   text-decoration: inherit;
+}
+
+a:hover {
+   color: #535bf2;
+}
+
+body {
+   margin: 0;
+   display: flex;
+   /* place-items: center; */
+   background: linear-gradient(180deg, rgba(40, 24, 51, 0.8) 0%, rgba(49, 22, 22, 0.85) 65%, rgba(42, 27, 42, 0.9) 100%);
+   background-blend-mode: color-dodge;
+   min-width: 320px;
+   height: 100vh;
+}
+
+h1 {
+   font-size: 3.2em;
+   line-height: 1.1;
+}
+
+.card {
+   padding: 2em;
+}
+
+#app {
+   display: contents;
+}
+
+button {
+   border-radius: 8px;
+   border: 1px solid transparent;
+   padding: 0.6em 1.2em;
+   font-size: 1em;
+   font-weight: 500;
+   font-family: inherit;
+   background-color: #1a1a1a;
+   cursor: pointer;
+   transition: border-color 0.25s;
+}
+
+button:hover {
+   border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+   outline: 4px auto -webkit-focus-ring-color;
+}
+
+ul {
+   list-style-type: none;
+   padding-inline-start: 0;
+}
+
+@media (prefers-color-scheme: light) {
+   :root {
+      color: #213547;
+      background-color: #ffffff;
+   }
+
+   a:hover {
+      color: #747bff;
+   }
+
+   button {
+      background-color: #f9f9f9;
+   }
+}
+
+
+/* text block formatting */
+
+span.curly {
+   color: lightskyblue;
+}
+
+span.curly:before,
+span.curly:after {
+   color: yellow;
+}
+
+span.curly:before {
+   content: "{ ";
+}
+
+span.curly:after {
+   content: " }";
+}
+
+span.close:before {
+   content: "{"
+}
+
+span.close:after {
+   content: "}"
+}
+
+.html-comment {
+   color: #aaa;
+   opacity: 0.75;
+}
+
+
+.html-comment:before {
+   content: "<!-- ";
+}
+
+.html-comment:after {
+   content: " -->";
+}
+
+p.html-comment {
+   margin-bottom: 0;
+}
+
+p.html-comment+p {
+   margin-top: 0;
+}
+
+.js-comment {
+   color: #aaa;
+   opacity: 0.75;
+}
+
+.js-comment:before {
+   content: "/* ";
+}
+
+.js-comment:after {
+   content: " */";
+}
+
+span.component {
+   color: #da4ea6;
+
+   &:before,
+   &:after {
+      color: grey;
+   }
+
+   &:before {
+      content: "<";
+   }
+
+   &:after {
+      content: "/>";
+   }
+}
+
+span.angle {
+   color: cornflowerblue;
+}
+
+span.angle:before,
+span.angle:after {
+   color: grey;
+}
+
+span.angle:before {
+   content: "<";
+}
+
+span.angle:after {
+   content: ">";
+}
+
+section.script {
+   margin-top: 1em;
+   /* margin-left: var(--tab-size); */
+   min-height: 4.5em;
+   /* position: relative; */
+   transform: translateX(var(--tab-size));
+   transition: transform 0.2s linear;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+section.script:before {
+   content: "<script>";
+   /* margin-left: calc(var(--tab-size) * -1); */
+   margin-left: calc(var(--tab-size) * -1);
+   transition: margin-left 0.2s linear;
+}
+
+section.script:after {
+   content: "</script>";
+   /* margin-left: calc(var(--tab-size) * -1); */
+   margin-left: calc(var(--tab-size) * -1);
+   transition: margin-left 0.2s linear;
+   /* position: absolute; */
+   bottom: 0;
+}
+
+p.code-block {
+   margin-block: 0;
+   /* transform: translateX(calc(var(--tab-size))); */
+   margin-left: var(--tab-size);
+   /* transition: transform 0.2s linear; */
+   transition: margin-left 0.2s linear;
+}
+
+p.code-block:before {
+   margin-left: calc(var(--tab-size) * -1);
+}
+
+p.code-block:after {
+   margin-left: calc(-1 * var(--tab-size));
+}
+
+span.reactive {
+   color: lightgreen;
+}
+
+span.non-reactive {
+   color: lightcoral;
+}
+
+article.snippet {
+   visibility: visible;
+}
+
+article.hidden {
+   visibility: hidden;
+   height: 0;
+}
+
+article.snippet.spring :where(ul, li, p) {
+   animation: spring-in 0.6s cubic-bezier(0.3, 0, 0.265, 1.55);
+}
+
+article.snippet.bounce :where(ul, li, p) {
+   animation: bounce-in 0.7s linear;
+}
+
+@keyframes spring-in {
+   from {
+      transform: translateX(-100%);
+   }
+
+   to {
+      transform: translateX(0);
+   }
+}
+
+@keyframes bounce-in {
+   from {
+      transform: translateX(200%);
+   }
+
+   45% {
+      transform: translateX(-1%);
+   }
+
+   55% {
+      transform: translateX(3%);
+   }
+
+   63% {
+      transform: translateX(5%);
+   }
+
+   85% {
+      transform: translateX(0%);
+   }
+
+   to {
+      transform: translateX(0);
+   }
+}
