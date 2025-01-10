@@ -89,7 +89,9 @@
       left: -20px;
       height: auto;
       border: 1px solid white;
-      background-color: rgb(15, 15, 34);
+      /* background-color: rgb(15, 18, 18); */
+      background-color: #0a0a0a;
+      display: none;
    }
 
    :global(.top-half div.outlet-tooltip) {

@@ -225,6 +225,7 @@
       text-align: left;
       width: 55ch;
       height: auto;
+      color: white;
    }
 
    ul {
@@ -234,6 +235,8 @@
       border-bottom: 1px solid grey;
       padding-block: 0.5em;
       position: relative;
+      background-color: black;
+      padding: 0.5em;
    }
 
    ul:before {

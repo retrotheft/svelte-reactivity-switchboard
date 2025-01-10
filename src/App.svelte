@@ -22,7 +22,7 @@
    import { SvelteSet } from "svelte/reactivity";
    import { resetChildContext, stateMeta } from "./lib/components/Source.svelte";
 
-   let fontSize = $state(1.2);
+   let fontSize = $state(1.1);
    let codeSize = $state(0.9);
    let tabSize = $state(2);
    let showTooltips = $state(false);
@@ -56,6 +56,11 @@
 
    const resizeObserver = new ResizeObserver(() => (currentOrigin = undefined));
    resizeObserver.observe(document.body);
+
+   const fontFamilies = {
+      serif: '"EB Garamond", serif',
+      sans: "Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;"
+   }
 </script>
 
 <svelte:window onclick={() => (currentOrigin = undefined)} onmousemove={(e) => (mouseY = e.clientY)} />
@@ -64,7 +69,7 @@
    <Arc origin={currentOrigin} />
 {/if}
 <main
-   style={`--tab-size: ${tabSize}ch; --font-size: ${fontSize}rem; --code-size: ${codeSize}rem; --mouse-y: ${mouseY}px; --font-family: ${serif ? '"EB Garamond", serif' : '"system-ui", sans-serif'};`}
+   style={`--tab-size: ${tabSize}ch; --font-size: ${fontSize}rem; --code-size: ${codeSize}rem; --mouse-y: ${mouseY}px; --font-family: ${serif ? fontFamilies.serif : fontFamilies.sans};`}
    class:showTooltips>
    <section id="hero">
       <img src="images/svelte-logo-large.png" alt="Svelte" />
@@ -73,7 +78,7 @@
    <section id="help">
       <p>An interactive cheatsheet to visualise how to pass reactive state around your Svelte app.</p>
       <p>To begin, click on a state variable declaration, and connect it to another component via context, props or snippets.</p>
-      <p>For more info, turn on tooltips and hover over each outlet.</p>
+      <!-- <p>For more info, turn on more help and hover over each outlet.</p> -->
    </section>
    <section id="settings">
       <ul>
@@ -96,12 +101,12 @@
             <span class="between-buttons">{tabSize.toFixed(0)}ch</span>
             <button onclick={() => (tabSize = Math.min(8, Math.round(tabSize + 1)))}>+</button>
          </li>
-         <li>
-            tool tips:
+         <!-- <li>
+            more help:
             <button onclick={() => (showTooltips = !showTooltips)}>
                {showTooltips ? "on" : "off"}
             </button>
-         </li>
+         </li> -->
       </ul>
    </section>
    <Parent />
