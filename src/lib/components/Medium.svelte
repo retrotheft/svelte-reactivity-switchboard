@@ -117,13 +117,14 @@
       overflow: hidden;
       container-type: inline-size;
       position: relative;
+      min-width: 3ch;
    }
 
    span:before {
       content: attr(data-short);
       position: absolute;
       inset: 0;
-      @container (width > 7ch) {
+      @container (inline-size > 7ch) {
          content: attr(data-name);
       }
    }
