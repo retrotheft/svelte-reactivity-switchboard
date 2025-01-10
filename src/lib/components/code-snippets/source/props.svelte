@@ -39,7 +39,7 @@
                .join(", ")})
          </li>
          <li>
-            <span class="js-comment">use $effect with caution. See tool tips for more info.</span>
+            <span class="js-comment">check Svelte docs for info on when not to use $effect()</span>
          </li>
          &#125;)
       </ul>
