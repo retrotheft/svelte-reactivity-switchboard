@@ -241,7 +241,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 2em;
+      gap: 2rem;
       position: relative;
 
       h1 {
