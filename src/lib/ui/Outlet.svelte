@@ -89,7 +89,7 @@
       left: -20px;
       height: auto;
       border: 1px solid white;
-      background-color: rgba(0, 0, 0.8);
+      background-color: rgb(15, 15, 34);
    }
 
    :global(.top-half div.outlet-tooltip) {

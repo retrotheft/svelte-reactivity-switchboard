@@ -34,6 +34,7 @@ body {
    background-blend-mode: color-dodge;
    min-width: 320px;
    height: 100vh;
+   overflow: hidden;
 }
 
 h1 {
