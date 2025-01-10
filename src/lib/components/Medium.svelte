@@ -120,11 +120,11 @@
    }
 
    span:before {
-      content: attr(data-name);
+      content: attr(data-short);
       position: absolute;
       inset: 0;
-      @container (width < 7ch) {
-         content: attr(data-short);
+      @container (width > 7ch) {
+         content: attr(data-name);
       }
    }
 
