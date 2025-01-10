@@ -170,11 +170,11 @@
    }
 
    button.control.reset:before {
-      content: "Clear";
+      content: "Clr";
       position: absolute;
       inset: 0;
-      @container (width < 3ch) {
-         content: "Clr";
+      @container (inline-size > 3ch) {
+         content: "Clear";
       }
    }
 

@@ -163,6 +163,7 @@
       font-size: var(--font-size);
       transition: font-size 0.1s linear;
       min-height: 700px;
+      min-width: 1400px;
       display: grid;
       justify-items: center;
       align-items: center;
@@ -247,6 +248,7 @@
       grid-row: 1;
       grid-column: 2;
       width: 25cqw;
+      max-height: 80%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -258,6 +260,7 @@
       padding-inline: 1em;
       border-radius: 1em;
       transition: font-size 0.1s linear;
+      overflow-y: auto;
    }
 
    section#hero h1 {
